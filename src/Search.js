@@ -2,7 +2,7 @@ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 
 const Search=()=> {
-    const[term,setTerm]= useState('programming');
+    const[term,setTerm]= useState('');
     const[results,setResults]=useState([])
 console.log(results);
 
@@ -20,18 +20,31 @@ console.log(results);
          setResults(data.query.search)
         }
       ShowResult();
-    }, [term])
+    }, [term]);
+
+    const RenderedResult=results.map(result=>{
+        return <div className="item">
+                   <div className="content">
+                       <div className="header">{result.title}</div>
+                        {result.snippet}
+                   </div>
+        </div>
+    })
 
     return (
         <div>
+            <div className="ui form">
             <div className="field">
                 <label>Search bar</label>
                 <input type="text"
                 value={term}
                 onChange={e=>setTerm(e.target.value)}
                 />
-                <button onClick={()=>OnTermChange(term)}>Click me</button>
+             
             </div>
+            </div>
+            
+            <div className="ui celled list">{RenderedResult}</div>
            
         </div>
     )
