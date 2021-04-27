@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Accordion from "./Accordion";
-import Items from "./Items"
-import Counter from "./Counter";
+//import Accordion from "./Accordion";
+//import Items from "./Items"
+//import Counter from "./Counter";
 import Search from  "./Search";
 
 
