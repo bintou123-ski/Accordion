@@ -9,12 +9,17 @@ import Search from  "./Search";
 
 const App = ()=>{
     const[selected,setSelected] = useState(Options[0]);
+    const[showdropdown, setShowdropdown]= useState(true);
     return(
         <div>
-            <DropDown 
-            selected={selected}
-            onSelectedChange={setSelected}
-            Options={Options}/>
+            <button onClick={()=>setShowdropdown(!showdropdown)}>Toggle DropDown</button>
+            { showdropdown?
+                 <DropDown 
+                 selected={selected}
+                 onSelectedChange={setSelected}
+                 Options={Options}/>:null
+            }
+           
               {/*<Search/>
           <Counter/>
            <Accordion Items={Items}/>*/}
