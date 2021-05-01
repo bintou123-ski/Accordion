@@ -6,7 +6,7 @@ const DropDown =({Options,selected,onSelectedChange})=> {
 
   useEffect(() => {
     const onBodyClick=(event)=>{
-      if(ref.current.contains(event.target)){
+      if(ref.current && ref.current.contains(event.target)){
         return;
       }
       setOpen(false);
