@@ -1,12 +1,14 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react';
+
 
 const DropDown =({Options,selected,onSelectedChange})=> {
   const[open,setOpen]= useState(false)
   const ref= useRef();
+ 
 
   useEffect(() => {
     const onBodyClick=(event)=>{
-      if(ref.current && ref.current.contains(event.target)){
+      if( ref.current.contains(event.target)){
         return;
       }
       setOpen(false);
@@ -14,7 +16,7 @@ const DropDown =({Options,selected,onSelectedChange})=> {
   
     document.body.addEventListener('click', onBodyClick);
     return ()=>{
-document.body.removeEventListener('click',onBodyClick);
+    document.body.removeEventListener('click',onBodyClick);
     }
   }, []);
 
@@ -31,7 +33,7 @@ document.body.removeEventListener('click',onBodyClick);
     });
 console.log(ref.current)
 return(
-    <div ref ={ref} className="ui form">
+     <div ref ={ref} className="ui form">
     <div className="field">
       <label className="label">Select a color</label>
       <div 
@@ -43,6 +45,10 @@ return(
       </div>
     </div>   
 </div>
-);   
+   
+) 
 };
 export default DropDown;
+
+
+
