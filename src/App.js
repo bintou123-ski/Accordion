@@ -46,24 +46,21 @@ import { Switch } from 'react-router';
     const[selected, setSelected] = useState(Options[0])
     return( 
         <div>
-          <Header/>
+            <Header/>
           <Route  path='/'>
-                <Accordion Items={Items}
-                />
+                <Accordion Items={Items}/>
              </Route>
 
              <Route  path='/list'>
-                <Search
-                />
+                <Search/>
              </Route>
 
              <Route  path='/dropdown'>
                 <DropDown Options={Options}
                   selected={selected}
-                  onSelectedChange={setSelected}
-                />
+                  onSelectedChange={setSelected}/>
              </Route>
-
+         
              
            {/* <button open={open} onClick={()=>open?
             <DropDown Options={Options}
