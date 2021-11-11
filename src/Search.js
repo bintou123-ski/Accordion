@@ -36,7 +36,7 @@ const Search=()=> {
             }
           }
     
-   }, [term])
+   }, [term]);
 
    
    const RenderedList=results.map(result=>{
